@@ -8,11 +8,14 @@
 import UIKit
 
 protocol sendDatainVC1 {
-    func addNewEvent(event: List)
+    func addNewEvent(id: String?, title: String?, time: String?, notes: String?, listDone: Bool?)
     func deletedIndex(id: String?)
 }
 
 class AddNewListVC: UIViewController {
+    
+    let context = appDelegate.persistentContainer.viewContext
+    
     var alertController = UIAlertController()
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -29,7 +32,7 @@ class AddNewListVC: UIViewController {
     
     var timePicker: UIDatePicker?
     
-    var comingDataVC: List?
+    var comingDataVC: Lists?
     var comingID: String? = UUID().uuidString
     
     var showButton: Bool? = false
@@ -85,7 +88,7 @@ class AddNewListVC: UIViewController {
 
     @IBAction func saveButton(_ sender: Any) {
         if titleTextField.text != ""{
-            testProtocol?.addNewEvent(event: List(listID: comingID!, listTitle: "\(titleTextField.text!)", listTime: "\(timeTextField.text!)", listNotes: "\(notesTextField.text!)", listDone: false))
+            testProtocol?.addNewEvent(id: comingID!, title: titleTextField.text!, time: timeTextField.text!, notes: notesTextField.text!, listDone: false)
             self.dismiss(animated: true)
         }else{
             titleTextField.layer.borderWidth = 1
