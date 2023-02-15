@@ -5,7 +5,7 @@ TodoList is a simple and intuitive app that allows users to create, manage and o
 
 ## Screenshots from the Project:
 
-![image alt text](Users/rzayevgara/Desktop/wetransfer_01-jpg_2023-02-15_1120(1)/4.jpg)
+![4](https://user-images.githubusercontent.com/89863203/219106991-a256e841-d0df-44fe-8b9c-0ec74a9b4703.jpg)
 
 
 ## Features
